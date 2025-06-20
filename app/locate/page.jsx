@@ -130,6 +130,9 @@ const Location = () => {
 
   // Load Google Maps
   useEffect(() => {
+    // Check if document is ready and Google Maps is not loaded
+    if (typeof window === 'undefined') return;
+
     if (!window.google && (userLocation || vendorData.length > 0)) {
       const script = document.createElement('script');
       script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`;
