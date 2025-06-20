@@ -1,0 +1,194 @@
+{
+  "vendorData": [
+    {
+      "id": 7,
+      "name": "Puchka Wala",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.351977,
+          22.560087
+        ]
+      },
+      "foodItems": [
+        "Puchka",
+        "Puchka Masala"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963152/exmd5bmtkqgmr5msherf.webp"
+    },
+    {
+      "id": 8,
+      "name": "Subhash Papad wala",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.352038,
+          22.560099
+        ]
+      },
+      "foodItems": [
+        "Fried Snacks",
+        "Puchka Packet",
+        "Puffed Rice (Murmura)",
+        "Sev",
+        "Bhujia",
+        "Chakli (circular fried snacks)",
+        "Lentils and Pulses",
+        "Chips",
+        "Papad",
+        "Fried Namkeen"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963241/Whats-App-Image-2024-06-19-at-14-46-35-5ec8518b_ymolvg.webp"
+    },
+    {
+      "id": 9,
+      "name": "Subhash Papad wala",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.352018,
+          22.560253
+        ]
+      },
+      "foodItems": [
+        "Puffed Rice (Murmura)",
+        "Papad wala",
+        "Sev",
+        "Bhujia",
+        "Chips",
+        "Papad",
+        "Fried Namkeen"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963265/Whats-App-Image-2024-06-19-at-14-46-35-c6bd8150_shtwqi.webp"
+    },
+    {
+      "id": 10,
+      "name": "Wow Chicken",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.352032,
+          22.559962
+        ]
+      },
+      "foodItems": [
+        "Chicken Puff"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963288/Whats-App-Image-2024-06-19-at-14-46-35-29caa01a_xbxyzw.webp"
+    },
+    {
+      "id": 11,
+      "name": "kolkata Mocktail, Lassi & Kulfi Corner",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.351956,
+          22.559728
+        ]
+      },
+      "foodItems": [
+        "Mocktail",
+        "Lassi",
+        "Kulfi",
+        "Faluda"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963303/kokata-Mocktail-Lassi-Kulfi-Corner_znwqej.webp"
+    },
+    {
+      "id": 12,
+      "name": "Dolly Fast Food",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.35259,
+          22.559206
+        ]
+      },
+      "foodItems": [
+        "Roll",
+        "Momo",
+        "Rice",
+        "Chowmein",
+        "Kabab"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963321/Dolly-Fast-Food_ju0rmc.webp"
+    },
+    {
+      "id": 13,
+      "name": "Jay mata di puchka",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.352623,
+          22.559256
+        ]
+      },
+      "foodItems": [
+        "Puchka Masala",
+        "Puchka"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963335/jay-mata-di_suggr7.webp"
+    },
+    {
+      "id": 14,
+      "name": "Dosa shop",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.35275,
+          22.559573
+        ]
+      },
+      "foodItems": [
+        "Masala Dosa",
+        "Idli",
+        "Lassi"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963349/dosa-wala_demswq.webp"
+    },
+    {
+      "id": 15,
+      "name": "Ma Vindhyavasini Tea Staller",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          88.352776,
+          22.559424
+        ]
+      },
+      "foodItems": [
+        "Tea",
+        "Masala Tea",
+        "Gud Tea"
+      ],
+      "hygieneRating": 4,
+      "tasteRating": 4,
+      "hospitalityRating": 4,
+      "photoUrl": "https://res.cloudinary.com/dlpm03ztl/image/upload/v1729963365/tea-staller_ttsjjq.webp"
+    }
+  ]
+}
