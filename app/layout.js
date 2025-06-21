@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <Toaster position='top-center' reverseOrder={false} />
         <Script
+          async={true}
           strategy='afterInteractive'
           src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
         />
