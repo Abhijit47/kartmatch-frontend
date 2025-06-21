@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -10,7 +12,7 @@ import {
 import Logo from '../public/logo.png'; // Adjust the path as necessary
 import Navigation from './Navigation';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className='bg-red-600 text-center p-6'>
       {/* Logo */}
@@ -51,6 +53,4 @@ const Footer = () => {
       </p>
     </footer>
   );
-};
-
-export default Footer;
+}
