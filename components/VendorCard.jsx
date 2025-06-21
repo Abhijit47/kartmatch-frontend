@@ -76,9 +76,11 @@ const VendorCard = ({
                   <Image
                     src={vendor.photoUrl}
                     alt={vendor.name}
-                    layout='fill'
-                    objectFit='cover'
-                    className='rounded-lg'
+                    fill
+                    sizes={
+                      '(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
+                    }
+                    className='rounded-lg w-full h-full object-cover'
                   />
                   <span className='absolute top-2 left-2 bg-white/40 backdrop-blur-sm text-red-500 text-sm font-bold px-3 py-1 rounded-lg'>
                     {vendor.name}

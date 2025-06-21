@@ -1,6 +1,6 @@
 const isDev = process.env.NODE_ENV === 'development' ? true : false;
 
-const BASE_URL = isDev
+const BASE_URL = !isDev
   ? process.env.NEXT_PUBLIC_API_BASE_URL_DEV
   : process.env.NEXT_PUBLIC_API_BASE_URL_PROD;
 

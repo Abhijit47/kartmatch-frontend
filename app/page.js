@@ -1,9 +1,9 @@
-import BlogSection from '../component/BlogSection';
-import Gallery from '../component/Gallery';
-import Hero from '../component/Hero';
-import Preferences from '../component/Preferences';
-import Swipe from '../component/Swipe';
-import VendorSection from '../component/VendorSection';
+import BlogSection from '../components/BlogSection';
+import Gallery from '../components/Gallery';
+import Hero from '../components/Hero';
+import Preferences from '../components/Preferences';
+import Swipe from '../components/Swipe';
+import VendorSection from '../components/VendorSection';
 
 export default function Home() {
   return (

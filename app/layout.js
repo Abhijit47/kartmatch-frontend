@@ -1,6 +1,7 @@
-import Footer from '@/component/Footer';
-import Header from '@/component/Header';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 import { Toaster } from 'react-hot-toast';
 import './globals.css';
 
@@ -28,6 +29,10 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <Toaster position='top-center' reverseOrder={false} />
+        <Script
+          strategy='afterInteractive'
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
+        />
       </body>
     </html>
   );

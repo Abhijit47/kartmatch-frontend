@@ -201,7 +201,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+// import { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaHotel, FaRegStar } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
@@ -212,61 +212,90 @@ import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import NOT_AVAIL_IMAGE from '@/public/No_Image_Available.jpg'; // Adjust the path as necessary
+import { useSwipeContext } from '@/contexts/SwipeContext';
+// import { useEffect, useState } from 'react';
+import { FiLoader } from 'react-icons/fi';
+// import NOT_AVAIL_IMAGE from '@/public/No_Image_Available.jpg'; // Adjust the path as necessary
 
-const SwipeCard = ({ vendors = [] }) => {
-  const swiperRef = useRef(null);
-  const [favorites, setFavorites] = useState([]);
-  const [currentVendorIndex, setCurrentVendorIndex] = useState(0);
-  const [shuffledVendors, setShuffledVendors] = useState(vendors);
-  const [cardImage, setCardImage] = useState(NOT_AVAIL_IMAGE);
-  const [imageError, setImageError] = useState(false);
+export default function SwipeCard() {
+  const {
+    vendors,
+    loading,
+    swiperRef,
+    onChangeCurrentVendorIndex,
+    shuffledVendors,
+    cardImage,
+    onImageError,
+    onHandleSwiperSkip,
+    onSave,
+    currentVendorIndex,
+    onHandleShuffle,
+  } = useSwipeContext(); // Assuming you have a context to provide vendors
 
-  useEffect(() => {
-    if (imageError) {
-      setCardImage(NOT_AVAIL_IMAGE);
-    }
-  }, [imageError]);
+  // const swiperRef = useRef(null);
+  // const [favorites, setFavorites] = useState([]);
+  // const [currentVendorIndex, setCurrentVendorIndex] = useState(0);
+  // const [shuffledVendors, setShuffledVendors] = useState(vendors);
+  // const [cardImage, setCardImage] = useState(NOT_AVAIL_IMAGE);
+  // const [imageError, setImageError] = useState(false);
 
-  useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    setFavorites(storedFavorites);
-  }, []);
+  // useEffect(() => {
+  //   if (imageError) {
+  //     setCardImage(NOT_AVAIL_IMAGE);
+  //   }
+  // }, [imageError]);
 
-  const handleSkip = () => {
-    swiperRef.current?.swiper?.slideNext();
-  };
+  // useEffect(() => {
+  //   const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  //   setFavorites(storedFavorites);
+  // }, []);
 
-  const handleSave = () => {
-    const swiper = swiperRef.current?.swiper;
-    const currentIndex = swiper?.realIndex || 0;
-    const vendor = vendors[currentIndex];
-    if (!vendor) return;
+  // const handleSkip = () => {
+  //   swiperRef.current?.swiper?.slideNext();
+  // };
 
-    const alreadyExists = favorites.some((v) => v._id === vendor._id);
-    if (alreadyExists) {
-      toast.error('Vendor already in favorites!');
-      return;
-    }
+  // const handleSave = () => {
+  //   const swiper = swiperRef.current?.swiper;
+  //   const currentIndex = swiper?.realIndex || 0;
+  //   const vendor = vendors[currentIndex];
+  //   if (!vendor) return;
 
-    const newFavs = [...favorites, vendor];
-    setFavorites(newFavs);
-    localStorage.setItem('favorites', JSON.stringify(newFavs));
-    toast.success('Vendor saved!');
-    swiper.slideNext();
-  };
+  //   const alreadyExists = favorites.some((v) => v._id === vendor._id);
+  //   if (alreadyExists) {
+  //     toast.error('Vendor already in favorites!');
+  //     return;
+  //   }
 
-  useEffect(() => {
-    setShuffledVendors(vendors);
-  }, [vendors]);
+  //   const newFavs = [...favorites, vendor];
+  //   setFavorites(newFavs);
+  //   localStorage.setItem('favorites', JSON.stringify(newFavs));
+  //   toast.success('Vendor saved!');
+  //   swiper.slideNext();
+  // };
 
-  const handleShuffle = () => {
-    const shuffled = [...shuffledVendors].sort(() => Math.random() - 0.5);
-    setShuffledVendors(shuffled);
-    setCurrentVendorIndex(0);
-    swiperRef.current?.swiper?.slideTo(0);
-    toast.success('Vendors shuffled!');
-  };
+  // useEffect(() => {
+  //   setShuffledVendors(vendors);
+  // }, [vendors]);
+
+  // const handleShuffle = () => {
+  //   const shuffled = [...shuffledVendors].sort(() => Math.random() - 0.5);
+  //   setShuffledVendors(shuffled);
+  //   setCurrentVendorIndex(0);
+  //   swiperRef.current?.swiper?.slideTo(0);
+  //   toast.success('Vendors shuffled!');
+  // };
+
+  {
+    /* Show loading spinner while fetching */
+  }
+
+  if (loading) {
+    return (
+      <div className='flex justify-center mt-16 animate-spin'>
+        <FiLoader color='black' size={50} height={100} width={100} />
+      </div>
+    );
+  }
 
   if (!vendors.length) {
     return <div className='text-center py-10'>No vendors available.</div>;
@@ -280,7 +309,7 @@ const SwipeCard = ({ vendors = [] }) => {
         </div>
         <button
           className='px-4 sm:px-6 py-2 bg-gradient-to-r from-[#FF384A] to-[#FF5463] text-white rounded-3xl text-sm sm:text-base flex items-center gap-2 shadow-md'
-          onClick={handleShuffle}>
+          onClick={onHandleShuffle}>
           <IoMdShuffle size={20} /> Shuffle
         </button>
       </div>
@@ -288,10 +317,18 @@ const SwipeCard = ({ vendors = [] }) => {
       <Swiper
         ref={swiperRef}
         effect='cards'
+        freeMode={true}
+        loop={true}
+        // rewind={true}
+        simulateTouch={true}
+        edgeSwipeDetection={true}
+        touchReleaseOnEdges={true}
         grabCursor={true}
         modules={[EffectCards]}
         className='w-[370px] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto'
-        onSlideChange={(swiper) => setCurrentVendorIndex(swiper.realIndex)}>
+        onSlideChange={(swiper) =>
+          onChangeCurrentVendorIndex(swiper.realIndex)
+        }>
         {shuffledVendors.map((vendor, index) => (
           <SwiperSlide
             key={vendor._id || index}
@@ -307,7 +344,7 @@ const SwipeCard = ({ vendors = [] }) => {
                   className='rounded-lg'
                   onError={() => {
                     toast.error('Failed to load vendor image');
-                    setImageError(true);
+                    onImageError(true);
                   }}
                   sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 />
@@ -378,12 +415,12 @@ const SwipeCard = ({ vendors = [] }) => {
             <div className='mt-4 flex justify-between gap-3'>
               <button
                 className='w-full py-2 border border-red-400 text-red-500 font-medium rounded-lg text-sm'
-                onClick={handleSkip}>
+                onClick={onHandleSwiperSkip}>
                 Skip
               </button>
               <button
                 className='w-full py-2 bg-green-600 text-white rounded-lg text-sm font-medium'
-                onClick={handleSave}>
+                onClick={onSave}>
                 Save
               </button>
             </div>
@@ -392,6 +429,4 @@ const SwipeCard = ({ vendors = [] }) => {
       </Swiper>
     </div>
   );
-};
-
-export default SwipeCard;
+}

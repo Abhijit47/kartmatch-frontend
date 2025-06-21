@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Hero1 from '../public/Hero1.png';
 import banner from '../public/banner.png';
 
-const Hero = () => {
+export default function Hero() {
   return (
     <section className='relative bg-[#F51F1F] min-h-screen flex items-center justify-center px-4 md:px-10 lg:px-16 overflow-hidden'>
       <div className='relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-6xl mx-auto'>
@@ -54,6 +54,4 @@ const Hero = () => {
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

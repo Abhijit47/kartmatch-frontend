@@ -1,7 +1,10 @@
 'use client';
 
+import DynamicLoader from '@/components/DynamicLoader';
 import configs from '@/configs';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { GoogleMapsEmbed } from '@next/third-parties/google';
+import { Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import * as yup from 'yup';
@@ -59,8 +62,8 @@ export default function DonationForm() {
   };
 
   return (
-    <main>
-      <div className='bg-gray-100 mt-24 min-h-screen'>
+    <main className='bg-gray-100 space-y-8 my-16'>
+      <section className={'mt-24'}>
         <div className='max-w-4xl mx-auto p-6'>
           <div className='text-center mt-6'>
             <h1 className='text-4xl font-semibold text-[#22343DCC] font-Poppins'>
@@ -141,12 +144,32 @@ export default function DonationForm() {
             </form>
           </div>
         </div>
+
         {/* <button
           className='bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400'
           onClick={() => sendEmail()}>
           Send email
         </button> */}
-      </div>
+      </section>
+
+      <section>
+        <Suspense fallback={<DynamicLoader />}>
+          <div className='w-full h-full aspect-video md:aspect-[22/9] lg:aspect-[26/9]'>
+            <GoogleMapsEmbed
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+              apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+              height={'500'}
+              width='1596'
+              mode='place'
+              loading={'lazy'}
+              q='Kolkata,West+Bengal,IN'
+            />
+          </div>
+        </Suspense>
+      </section>
     </main>
   );
 }

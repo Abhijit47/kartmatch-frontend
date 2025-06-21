@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Swipe = () => {
+export default function Swipe() {
   return (
     <div className='relative bg-yellow-400  text-center p-10 leading-loose'>
       <h2 className='text-3xl md:text-5xl font-bold text-green-700 '>
@@ -26,6 +26,4 @@ const Swipe = () => {
       </div>
     </div>
   );
-};
-
-export default Swipe;
+}

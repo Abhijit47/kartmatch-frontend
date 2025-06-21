@@ -6,9 +6,9 @@
 // import Vendor3 from '../../public/assets/vendorPage/Vendor3.png';
 // import Vendor4 from '../../public/assets/vendorPage/Vendor4.png';
 // import Image from "next/image";
-import FavouriteCard from '../../component/FavouriteCard';
+import FavouriteCard from '../../components/FavouriteCard';
 
-const Favorite = () => {
+export default function Favorite() {
   return (
     <main>
       <div className='bg-gray-100 mt-24 min-h-screen shadow-lg '>
@@ -28,6 +28,4 @@ const Favorite = () => {
       </div>
     </main>
   );
-};
-
-export default Favorite;
+}

@@ -12,6 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@emailjs/nodejs": "^5.0.2",
     "@hookform/resolvers": "^5.0.1",
+    "@next/third-parties": "^15.3.4",
     "@sendgrid/mail": "^8.1.5",
     "framer-motion": "^12.6.3",
     "install": "^0.13.0",
@@ -29,6 +30,9 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/google.maps": "^3.58.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "tailwindcss": "^4"
   }
 }

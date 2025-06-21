@@ -1,32 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Blog1 from '../public/Blog1.png';
-import Blog3 from '../public/Blog3.png';
-import Blog2 from '../public/Blog4.png';
+
+import { blogPosts } from '@/constants';
 import Profile from '../public/Profile.png';
 
-const blogPosts = [
-  {
-    image: Blog1,
-    title: 'Samosa: the crispy, spicy hug you need on a bad day.',
-    author: 'Anjika',
-    date: 'January 1st, 2025',
-  },
-  {
-    image: Blog2,
-    title: 'A good pani puri is like a burst of happiness in your mouth.',
-    author: 'Anjika',
-    date: 'January 1st, 2025',
-  },
-  {
-    image: Blog3,
-    title: 'If happiness had a flavor, it would be bhel puri.',
-    author: 'Anjika',
-    date: 'January 1st, 2025',
-  },
-];
-
-const BlogSection = () => {
+export default function BlogSection() {
   return (
     <div className=' py-12 px-6'>
       {/* Title Section */}
@@ -76,6 +54,4 @@ const BlogSection = () => {
       </div>
     </div>
   );
-};
-
-export default BlogSection;
+}
