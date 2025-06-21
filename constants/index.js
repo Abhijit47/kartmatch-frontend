@@ -14,14 +14,14 @@ import Blog1 from '../public/Blog1.png';
 import Blog3 from '../public/Blog3.png';
 import Blog2 from '../public/Blog4.png';
 
-import a1 from '../Downloads/1.json';
-import a2 from '../Downloads/2.json';
-import a3 from '../Downloads/3.json';
-import a4 from '../Downloads/4.json';
-import a7 from '../Downloads/7.json';
-import chana from '../Downloads/Chanachur.json';
-import puchka from '../Downloads/Puchka.json';
-import dosa from '../Downloads/dosa.json';
+import a1 from '../downloads/1.json';
+import a2 from '../downloads/2.json';
+import a3 from '../downloads/3.json';
+import a4 from '../downloads/4.json';
+import a7 from '../downloads/7.json';
+import chana from '../downloads/Chanachur.json';
+import puchka from '../downloads/Puchka.json';
+import dosa from '../downloads/dosa.json';
 
 export const galleryImages = [
   Vendor1,
