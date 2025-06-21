@@ -138,11 +138,16 @@ export default function LocateContextProvider({ children }) {
 
   // Initialize Google Map
   function initializeMap() {
+    if (typeof window === 'undefined') return;
+
     const center = new google.maps.LatLng(userLocation.lat, userLocation.lng);
-    const map = new google.maps.Map(document.getElementById('vendor-map'), {
-      center,
-      zoom: 11,
-    });
+    const map = new google.maps.Map(
+      window.document.getElementById('vendor-map'),
+      {
+        center,
+        zoom: 11,
+      }
+    );
 
     // User marker
     new google.maps.Marker({
